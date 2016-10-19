@@ -32,6 +32,8 @@ Model.prototype.applyClick = function(rowClicked, columnClicked) {
   console.log('clicked ' + rowClicked + columnClicked);
 
   if (this.board[rowClicked][columnClicked] === "empty") {
+    if (!this.isGameOver) {
+
     this.board[rowClicked][columnClicked] =
       this.isNoughtToPlay ? "nought" : "cross";
     this.isNoughtToPlay = !this.isNoughtToPlay;
@@ -60,7 +62,7 @@ Model.prototype.applyClick = function(rowClicked, columnClicked) {
       }
     }
 
-    // check diagonals for a winner
+    // check diagonal
 
     // check for draw
     isDraw = true;
@@ -81,6 +83,7 @@ Model.prototype.applyClick = function(rowClicked, columnClicked) {
   } else {
     console.log('cell already taken');
   }
+}
 };
 
 /*
