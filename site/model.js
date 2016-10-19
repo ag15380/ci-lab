@@ -60,6 +60,8 @@ Model.prototype.applyClick = function(rowClicked, columnClicked) {
       }
     }
 
+    // check diagonals for a winner
+
     // check for draw
     isDraw = true;
     for (row = 0; row <= 2; row++) {
@@ -89,4 +91,3 @@ exports.createModel = function() {
   model.reset();
   return model;
 };
-
